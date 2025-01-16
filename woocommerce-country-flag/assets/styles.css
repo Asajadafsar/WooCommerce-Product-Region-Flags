@@ -1,0 +1,25 @@
+.product-country-flag img {
+    width: 20px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.product-country-flag {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.single-product-country-flag {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.single-product-country-flag img {
+    width: 25px;
+    height: 18px;
+    vertical-align: middle;
+    border-radius: 3px;
+}
