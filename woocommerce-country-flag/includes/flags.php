@@ -5,7 +5,7 @@
 
     return [
         ''        => __('Select a country', 'woocommerce'),
-        'global'  => 'https://example.com/icons/global.svg', // Replace with actual URL
+        'global'  => 'https://irgiftcard.com/wp-content/uploads/2025/01/global.svg',
         'us'      => 'https://flagcdn.com/us.svg',
         'uk'      => 'https://flagcdn.com/gb.svg',
         'fr'      => 'https://flagcdn.com/fr.svg',
