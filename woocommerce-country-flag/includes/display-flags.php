@@ -38,7 +38,7 @@ add_action('woocommerce_single_product_summary', function () {
 
     if ($country && isset($flags[$country])) {
         echo '<div class="single-product-country-flag" style="margin-top: 20px;">';
-        echo '<strong>' . __('Country:', 'woocommerce') . '</strong>';
+        echo '<strong>' . __('Country:', 'woocommerce') . '</strong> ';
         echo '<img src="' . esc_url($flags[$country]) . '" alt="' . esc_attr($country) . ' flag" style="width: 25px; height: 18px; vertical-align: middle;">';
         echo '</div>';
     }
@@ -100,9 +100,12 @@ add_shortcode('product_country_flags', function () {
         var defaultCountry = $(".country-flag-link.active").data("country");
         $(".product").hide();
         $(".product").each(function() {
-            var productCountry = $(this).find(".product-country-flag img").attr("alt").split(" ")[0];
-            if (productCountry === defaultCountry) {
-                $(this).show();
+            var productCountry = $(this).find(".product-country-flag img").attr("alt");
+            if (productCountry) {
+                productCountry = productCountry.split(" ")[0];
+                if (productCountry === defaultCountry) {
+                    $(this).show();
+                }
             }
         });
 
@@ -113,9 +116,12 @@ add_shortcode('product_country_flags', function () {
             $(this).addClass("active");
             $(".product").hide();
             $(".product").each(function() {
-                var productCountry = $(this).find(".product-country-flag img").attr("alt").split(" ")[0];
-                if (productCountry === country) {
-                    $(this).show();
+                var productCountry = $(this).find(".product-country-flag img").attr("alt");
+                if (productCountry) {
+                    productCountry = productCountry.split(" ")[0];
+                    if (productCountry === country) {
+                        $(this).show();
+                    }
                 }
             });
         });
